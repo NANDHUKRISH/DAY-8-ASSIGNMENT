@@ -450,13 +450,38 @@ request.send();
 request.onload=function()
 {
 var data=JSON.parse(request.response);
-  console.log(data);
 for(let i in data)
   {
-    
-  if(data[i].name["official"]=="Republic of China (Taiwan)")
-  console.log(data[i].currencies)
- console.log(data[i].currencies==="usd");
+  let currency = data[i].currencies;
+  for(let j=0;j<currency.length;j++){
+    if(currency[j].code=="USD")
+    {
+      console.log(data[i].name);
+    }
+  }
  }
 }
+
+// OUTPUT
+
+American Samoa                            
+Bonaire, Sint Eustatius and Saba          
+British Indian Ocean Territory            
+United States Minor Outlying Islands      
+Virgin Islands (British)                  
+Virgin Islands (U.S.)                     
+Cambodia                                  
+Ecuador                                   
+El Salvador                               
+Guam 
+Marshall Islands 
+Micronesia (Federated States of) 
+Northern Mariana Islands 
+Palau 
+Panama 
+Puerto Rico 
+Timor-Leste 
+Turks and Caicos Islands 
+United States of America 
+Zimbabwe
 
